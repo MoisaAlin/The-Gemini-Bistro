@@ -6,6 +6,7 @@ import HomePage from './components/HomePage';
 import MenuPage from './components/MenuPage';
 import ReservationsPage from './components/ReservationsPage';
 import Chatbot from './components/Chatbot';
+import StructuredData from './components/StructuredData';
 
 export type Page = 'home' | 'menu' | 'reservations';
 
@@ -26,6 +27,7 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-900 text-gray-100 font-sans">
+      <StructuredData currentPage={currentPage} />
       <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
       <main className="flex-grow">
         {renderPage()}
