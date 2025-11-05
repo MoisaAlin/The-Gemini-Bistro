@@ -6,7 +6,7 @@ This log tracks the development progress of The Gemini Bistro's website, alignin
 
 ### **v1.0.0 - Initial Project Setup & Core Feature Implementation**
 
-**Date:** [Current Date]
+**Date:** 04.11.2025
 
 #### **Project Initialization & Configuration**
 - **[DONE]** Set up a new project using `React` and `TypeScript`.
@@ -35,3 +35,22 @@ This log tracks the development progress of The Gemini Bistro's website, alignin
 - **[DONE]** Applied a modern, dark-themed aesthetic using Tailwind CSS utility classes.
 - **[DONE]** Ensured the layout is fully responsive, providing a seamless experience on both desktop and mobile devices.
 - **[DONE]** Added subtle transitions and hover effects to improve user interaction and engagement.
+
+---
+
+### **v1.1.0 - Visual & SEO Upgrade**
+
+**Date:** 05.11.2025
+
+#### **Visual Enhancements**
+- **[DONE]** Replaced the static hero image on `HomePage.tsx` with an immersive, auto-playing background video to better capture the restaurant's ambiance.
+- **[DONE]** Integrated a dynamic `PhotoGallery.tsx` component to showcase high-quality images of the restaurant and its dishes.
+- **[DONE]** Created and integrated a `Testimonials.tsx` component to display positive guest reviews, building social proof and trust.
+
+#### **Interactivity & UX Polish**
+- **[DONE]** Implemented `Framer Motion` across the application to add fluid page transitions, staggered entrance animations for lists, and polished micro-interactions on hover and component visibility changes.
+- **[DONE]** Added interactive menu filters to `MenuPage.tsx`, allowing users to sort by dietary tags for a more personalized browsing experience.
+
+#### **SEO & Accessibility**
+- **[DONE]** Added a `StructuredData.tsx` component to dynamically inject `Schema.org` JSON-LD, improving SEO for the restaurant and menu pages.
+- **[DONE]** Ensured new interactive elements, like menu filters, include appropriate ARIA attributes for better accessibility.
