@@ -1,5 +1,5 @@
-
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const galleryImages = [
   {
@@ -35,6 +35,20 @@ const galleryImages = [
 ];
 
 const PhotoGallery: React.FC = () => {
+  const gridVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: { y: 0, opacity: 1 },
+  };
+
   return (
     <div className="bg-gray-900 py-16 sm:py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -42,9 +56,19 @@ const PhotoGallery: React.FC = () => {
           <h2 className="text-4xl font-extrabold text-white">A Glimpse Into Our World</h2>
           <p className="text-gray-400 mt-2">Where every detail is a stroke of culinary art.</p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+          variants={gridVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {galleryImages.map((image, index) => (
-            <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg aspect-w-4 aspect-h-3">
+            <motion.div
+              key={index}
+              className="group relative overflow-hidden rounded-lg shadow-lg aspect-w-4 aspect-h-3"
+              variants={itemVariants}
+            >
               <img src={image.src} alt={image.alt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
               <div className="absolute inset-0 bg-black bg-opacity-40 transition-opacity duration-500 group-hover:bg-opacity-60"></div>
               <div className="absolute inset-0 flex items-end p-6">
@@ -52,9 +76,9 @@ const PhotoGallery: React.FC = () => {
                   {image.title}
                 </h3>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );
