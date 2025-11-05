@@ -1,4 +1,4 @@
-import { MenuItem } from './types';
+import { MenuItem, Testimonial } from './types';
 
 export const MENU_DATA: MenuItem[] = [
   {
@@ -63,5 +63,26 @@ export const MENU_DATA: MenuItem[] = [
     description: 'A signature cocktail with Aperol, prosecco, and a splash of blood orange juice.',
     ingredients: ['Aperol', 'Prosecco', 'Blood orange juice'],
     tags: ['vegan', 'gluten-free']
+  }
+];
+
+export const TESTIMONIALS_DATA: Testimonial[] = [
+  {
+    quote: "The best Carbonara I've had outside of Rome. The ambiance is perfect for a date night. We'll be back for sure!",
+    name: 'Alexandra P.',
+    source: 'Google Review',
+    rating: 5,
+  },
+  {
+    quote: "An absolute gem! From the 'Tuscan Sunset' cocktail to the Filet Mignon, every single detail was impeccable. The service was top-notch.",
+    name: 'David L.',
+    source: 'Google Review',
+    rating: 5,
+  },
+  {
+    quote: "A truly memorable dining experience. The Panna Cotta was divine, and the chef's passion is evident in every dish. Highly recommended.",
+    name: 'Maria S.',
+    source: 'Google Review',
+    rating: 5,
   }
 ];
