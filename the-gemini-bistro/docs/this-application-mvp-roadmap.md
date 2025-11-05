@@ -47,9 +47,9 @@ Building on the successful MVP, this roadmap outlines a phased approach to trans
 - **Dynamic Photo Gallery (Completed):** A full-width gallery featuring high-quality images of dishes, interior design, and the chef in action.
 - **Interactive Menu Filters (Completed):** Allow users to filter the menu by dietary preferences (e.g., vegan, gluten-free), spice level, or chef's recommendations.
 - **Schema.org Markup (Completed):** Implement structured data for the restaurant, menu, and reviews to dramatically improve local SEO and search engine result presentation.
-- **Hero Video:** Replace the static homepage image with a short, professionally shot, and highly optimized video showcasing the restaurant's ambiance.
-- **Live Testimonials:** Integrate a section that pulls in recent positive reviews from platforms like Google Reviews to build social proof.
-- **Polished Micro-interactions:** Add subtle animations and transitions (using a library like Framer Motion) to create a more premium feel.
+- **Hero Video (Completed):** Replace the static homepage image with a short, professionally shot, and highly optimized video showcasing the restaurant's ambiance.
+- **Live Testimonials (Completed):** Integrate a section that pulls in recent positive reviews from platforms like Google Reviews to build social proof.
+- **Polished Micro-interactions (Completed):** Add subtle animations and transitions (using a library like Framer Motion) to create a more premium feel.
 
 #### **v1.2: The Backend Foundation**
 *Objectives: Build the necessary infrastructure for a data-driven application.*
