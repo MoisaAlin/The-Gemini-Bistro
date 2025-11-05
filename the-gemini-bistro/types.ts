@@ -11,3 +11,10 @@ export interface ChatMessage {
   sender: 'user' | 'ai';
   text: string;
 }
+
+export interface Testimonial {
+  quote: string;
+  name: string;
+  source: string;
+  rating: number;
+}
