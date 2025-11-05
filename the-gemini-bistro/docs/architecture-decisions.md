@@ -72,3 +72,14 @@ This document outlines the key architectural decisions made for The Gemini Bistr
     - **MVP Focus:** The goal is to quickly build and deploy a functional frontend. A backend would add significant complexity and development time.
     - **Simplicity:** Storing static data like the menu in `constants.ts` is simple and effective for the current requirements.
     - **Future-Proofing:** The reservation form is built to be easily adaptable. The `handleSubmit` function can be modified in the future to send a request to a backend API without changing the UI.
+
+---
+
+### **ADR-008: Animation Library Selection**
+
+- **Decision:** Use **Framer Motion** for animations and page transitions.
+- **Reasoning:**
+    - **Seamless React Integration:** Designed specifically for React, offering a declarative API that integrates perfectly with our component-based architecture.
+    - **Powerful & Flexible:** Provides a rich set of features, including gestures, physics-based animations (springs), and layout animations, enabling the creation of fluid and premium user experiences.
+    - **Performance:** It is highly optimized, ensuring animations are smooth and do not degrade application performance.
+    - **AnimatePresence:** The `AnimatePresence` component makes it trivial to animate components as they enter and exit the React tree, which was essential for our page transitions and the chatbot UI.
