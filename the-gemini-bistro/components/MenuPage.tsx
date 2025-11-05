@@ -1,9 +1,18 @@
 import React, { useState, useMemo } from 'react';
 import { MENU_DATA } from '../constants';
 import type { MenuItem } from '../types';
+import { motion } from 'framer-motion';
 
 const MenuCard: React.FC<{ item: MenuItem }> = ({ item }) => (
-  <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-1 transition-transform duration-300">
+  <motion.div 
+    className="bg-gray-800 rounded-lg shadow-lg overflow-hidden"
+    variants={{
+      hidden: { y: 20, opacity: 0 },
+      visible: { y: 0, opacity: 1 },
+    }}
+    whileHover={{ y: -5, scale: 1.02 }}
+    transition={{ type: 'spring', stiffness: 300 }}
+  >
     <div className="p-6">
       <div className="flex justify-between items-baseline">
         <h3 className="text-xl font-semibold text-amber-400">{item.name}</h3>
@@ -11,7 +20,7 @@ const MenuCard: React.FC<{ item: MenuItem }> = ({ item }) => (
       </div>
       <p className="text-gray-400 mt-2 text-sm">{item.description}</p>
     </div>
-  </div>
+  </motion.div>
 );
 
 type FilterOption = 'vegan' | 'gluten-free' | 'spicy' | "chef's recommendation";
@@ -38,7 +47,6 @@ const MenuPage: React.FC = () => {
       return MENU_DATA;
     }
     return MENU_DATA.filter(item => {
-      // Return true only if the item's tags array contains ALL active filters
       return Array.from(activeFilters).every(filter => item.tags?.includes(filter));
     });
   }, [activeFilters]);
@@ -51,6 +59,15 @@ const MenuPage: React.FC = () => {
       }))
       .filter(category => category.items.length > 0);
   }, [filteredMenu]);
+
+  const gridVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
 
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -80,11 +97,16 @@ const MenuPage: React.FC = () => {
         displayedCategories.map(category => (
           <div key={category.name} className="mb-12">
             <h3 className="text-3xl font-bold text-amber-500 mb-6 border-b-2 border-gray-700 pb-2">{category.name}</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              variants={gridVariants}
+              initial="hidden"
+              animate="visible"
+            >
               {category.items.map(item => (
                 <MenuCard key={item.name} item={item} />
               ))}
-            </div>
+            </motion.div>
           </div>
         ))
       ) : (
