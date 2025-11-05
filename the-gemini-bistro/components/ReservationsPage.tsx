@@ -1,5 +1,5 @@
-
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const ReservationsPage: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -28,13 +28,18 @@ const ReservationsPage: React.FC = () => {
   if (isSubmitted) {
     return (
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
-        <div className="bg-gray-800 p-8 rounded-lg shadow-xl max-w-md mx-auto">
+        <motion.div
+          className="bg-gray-800 p-8 rounded-lg shadow-xl max-w-md mx-auto"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ type: 'spring' }}
+        >
           <h2 className="text-3xl font-bold text-amber-400 mb-4">Thank You!</h2>
           <p className="text-gray-300">Your reservation request has been sent. We will contact you shortly to confirm.</p>
            <button onClick={() => setIsSubmitted(false)} className="mt-6 px-6 py-2 bg-amber-500 text-white font-semibold rounded-lg hover:bg-amber-600 transition duration-300">
             Make Another Reservation
           </button>
-        </div>
+        </motion.div>
       </div>
     );
   }
@@ -45,7 +50,12 @@ const ReservationsPage: React.FC = () => {
         <h2 className="text-4xl font-extrabold text-white">Book Your Table</h2>
         <p className="text-gray-400 mt-2">We look forward to hosting you.</p>
       </div>
-      <div className="max-w-2xl mx-auto bg-gray-800 p-8 rounded-lg shadow-2xl">
+      <motion.div
+        className="max-w-2xl mx-auto bg-gray-800 p-8 rounded-lg shadow-2xl"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>
@@ -81,7 +91,7 @@ const ReservationsPage: React.FC = () => {
             </button>
           </div>
         </form>
-      </div>
+      </motion.div>
     </div>
   );
 };
