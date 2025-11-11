@@ -1,0 +1,73 @@
+{
+  "nav": {
+    "home": "Home",
+    "menu": "Menu",
+    "reservations": "Reservations"
+  },
+  "header": {
+    "title": "The Gemini Bistro"
+  },
+  "home": {
+    "title": "Experience Culinary Excellence",
+    "subtitle": "Discover a symphony of flavors crafted with passion and the finest ingredients. Welcome to The Gemini Bistro.",
+    "viewMenuButton": "View Our Menu",
+    "makeReservationButton": "Make a Reservation"
+  },
+  "gallery": {
+    "title": "A Glimpse Into Our World",
+    "subtitle": "Where every detail is a stroke of culinary art."
+  },
+  "testimonials": {
+    "title": "What Our Guests Are Saying",
+    "subtitle": "The experiences that define us."
+  },
+  "menuPage": {
+    "title": "Our Menu",
+    "subtitle": "Crafted with care, inspired by tradition.",
+    "noResults": "No menu items match the selected filters.",
+    "noResultsSuggestion": "Try removing a filter to see more options.",
+    "loadingError": "Failed to load the menu. Please try again later.",
+    "filters": {
+      "vegan": "vegan",
+      "gluten-free": "gluten-free",
+      "spicy": "spicy",
+      "chefs-recommendation": "chef's recommendation"
+    }
+  },
+  "reservationsPage": {
+    "title": "Book Your Table",
+    "subtitle": "We look forward to hosting you.",
+    "form": {
+      "name": "Full Name",
+      "email": "Email",
+      "date": "Date",
+      "time": "Time",
+      "guests": "Guests",
+      "requests": "Special Requests",
+      "submitButton": "Request Reservation",
+      "submittingButton": "Submitting..."
+    },
+    "success": {
+      "title": "Thank You!",
+      "message": "Your reservation request has been sent. We will contact you shortly to confirm.",
+      "newReservationButton": "Make Another Reservation"
+    }
+  },
+  "chatbot": {
+    "initialMessage": "Hello! I'm the virtual host for The Gemini Bistro. How can I help you with our menu today?",
+    "inputPlaceholder": "Ask about the menu...",
+    "inputPlaceholderListening": "Listening...",
+    "headerTitle": "Ask the AI Chef",
+    "openChat": "Open Chat",
+    "closeChat": "Close chat",
+    "sendMessage": "Send Message",
+    "enableVoice": "Enable voice",
+    "disableVoice": "Disable voice",
+    "startListening": "Start listening",
+    "stopListening": "Stop listening",
+    "errorMessage": "Sorry, I'm having trouble connecting right now."
+  },
+  "footer": {
+    "copyright": "© 2025 The Gemini Bistro. All rights reserved."
+  }
+}
