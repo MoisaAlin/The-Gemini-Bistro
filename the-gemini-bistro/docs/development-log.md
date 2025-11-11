@@ -54,3 +54,40 @@ This log tracks the development progress of The Gemini Bistro's website, alignin
 #### **SEO & Accessibility**
 - **[DONE]** Added a `StructuredData.tsx` component to dynamically inject `Schema.org` JSON-LD, improving SEO for the restaurant and menu pages.
 - **[DONE]** Ensured new interactive elements, like menu filters, include appropriate ARIA attributes for better accessibility.
+
+---
+
+### **v1.2.0 - Backend Foundation (Mock API)**
+
+**Date:** 06.11.2025
+
+#### **Backend Simulation**
+- **[DONE]** Created a new `apiService.ts` to simulate a backend. This service provides asynchronous functions (`fetchMenu`, `fetchTestimonials`, `submitReservation`) that return data after a delay, mimicking real network requests.
+- **[DONE]** Moved all static application data (menu, testimonials) into the new `apiService.ts`, centralizing it as a mock database. The `constants.ts` file is now obsolete.
+
+#### **Component Refactoring**
+- **[DONE]** Refactored `MenuPage.tsx` to fetch data from the `apiService`. Implemented loading and error states, including skeleton loaders for a better user experience during data fetching.
+- **[DONE]** Refactored `Testimonials.tsx` to be data-driven, fetching its content asynchronously from the `apiService` and displaying a loading state.
+- **[DONE]** Upgraded `ReservationsPage.tsx` to use the `apiService`. The form submission is now an async process with loading indicators and user feedback for both success and failure scenarios.
+
+#### **AI Service Update**
+- **[DONE]** Modified `geminiService.ts` to asynchronously fetch menu data from the `apiService` to build its context. The context is now initialized on the first request and cached to ensure efficiency and accuracy without hardcoding data.
+
+#### **Admin & Monitoring**
+- **[DONE]** Implemented a full-featured **Admin Dashboard** accessible via a `?admin=true` query parameter. This includes a secure login, a menu manager for CRUD operations, and a reservation manager to view and update booking statuses.
+- **[DONE]** Integrated a **Monitoring and Analytics Service**. This includes setting up Sentry for error logging (via a custom Error Boundary and manual logging) and Google Analytics 4 for tracking page views and key user events (e.g., reservations, chatbot usage).
+
+---
+
+### **v1.3.0 - The Smart Experience**
+
+**Date:** 06.11.2025
+
+#### **AI & Accessibility Enhancements**
+- **[DONE]** **Enhanced AI Chatbot:** Upgraded the `geminiService` system prompt to empower the AI to ask clarifying questions and provide personalized recommendations and pairings, leveraging its reasoning capabilities more effectively.
+- **[DONE]** **Voice-Enabled Assistant:** Integrated the browser's native Web Speech API into the `Chatbot` component. Implemented speech-to-text for voice input and text-to-speech for AI responses, creating a full conversational loop. Added UI controls for microphone input and muting/unmuting AI speech.
+- **[DONE]** **Multi-language Support:** Implemented a comprehensive internationalization system.
+    - Created a `LanguageContext` to manage the application's language state (`en`, `ro`).
+    - Externalized all UI text into `en.json` and `ro.json` files.
+    - Refactored all user-facing components to consume translations via a `useTranslations` hook.
+    - Updated `geminiService` to be language-aware, instructing the AI to respond in the user's selected language.
