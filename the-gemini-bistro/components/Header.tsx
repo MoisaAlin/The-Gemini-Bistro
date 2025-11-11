@@ -1,6 +1,6 @@
-
 import React from 'react';
 import type { Page } from '../App';
+import { useTranslations } from '../hooks/useTranslations';
 
 interface HeaderProps {
   currentPage: Page;
@@ -28,7 +28,30 @@ const NavLink: React.FC<{
   );
 };
 
+const LanguageSwitcher: React.FC = () => {
+    const { changeLanguage, language } = useTranslations();
+    return (
+        <div className="flex items-center space-x-2">
+            <button
+                onClick={() => changeLanguage('en')}
+                className={`text-sm font-bold ${language === 'en' ? 'text-amber-400' : 'text-gray-400 hover:text-white'}`}
+            >
+                EN
+            </button>
+            <span className="text-gray-600">|</span>
+            <button
+                onClick={() => changeLanguage('ro')}
+                className={`text-sm font-bold ${language === 'ro' ? 'text-amber-400' : 'text-gray-400 hover:text-white'}`}
+            >
+                RO
+            </button>
+        </div>
+    );
+}
+
 const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
+  const { t } = useTranslations();
+
   return (
     <header className="bg-gray-900 bg-opacity-80 backdrop-blur-md sticky top-0 z-50 shadow-lg shadow-black/20">
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -37,27 +60,30 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
             <h1 
               className="text-2xl font-bold text-amber-400 cursor-pointer"
               onClick={() => setCurrentPage('home')}>
-              The Gemini Bistro
+              {t('header.title')}
             </h1>
           </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              <NavLink page="home" currentPage={currentPage} setCurrentPage={setCurrentPage}>Home</NavLink>
-              <NavLink page="menu" currentPage={currentPage} setCurrentPage={setCurrentPage}>Menu</NavLink>
-              <NavLink page="reservations" currentPage={currentPage} setCurrentPage={setCurrentPage}>Reservations</NavLink>
+              <NavLink page="home" currentPage={currentPage} setCurrentPage={setCurrentPage}>{t('nav.home')}</NavLink>
+              <NavLink page="menu" currentPage={currentPage} setCurrentPage={setCurrentPage}>{t('nav.menu')}</NavLink>
+              <NavLink page="reservations" currentPage={currentPage} setCurrentPage={setCurrentPage}>{t('nav.reservations')}</NavLink>
+               <div className="border-l border-gray-700 pl-4 ml-4">
+                 <LanguageSwitcher />
+               </div>
             </div>
           </div>
-          <div className="md:hidden">
-            {/* Mobile menu button can be added here if needed */}
+          <div className="md:hidden flex items-center space-x-4">
              <select 
                 value={currentPage} 
                 onChange={(e) => setCurrentPage(e.target.value as Page)}
                 className="bg-gray-800 text-white border-gray-700 rounded p-2"
               >
-              <option value="home">Home</option>
-              <option value="menu">Menu</option>
-              <option value="reservations">Reservations</option>
+              <option value="home">{t('nav.home')}</option>
+              <option value="menu">{t('nav.menu')}</option>
+              <option value="reservations">{t('nav.reservations')}</option>
             </select>
+            <LanguageSwitcher />
           </div>
         </div>
       </nav>
