@@ -1,7 +1,12 @@
-
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import { initializeMonitoring } from './services/monitoringService';
+import SentryErrorBoundary from './components/SentryErrorBoundary';
+import { LanguageProvider } from './contexts/LanguageContext';
+
+// Initialize Sentry and GA4
+initializeMonitoring();
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
@@ -11,6 +16,10 @@ if (!rootElement) {
 const root = ReactDOM.createRoot(rootElement);
 root.render(
   <React.StrictMode>
-    <App />
+    <SentryErrorBoundary>
+      <LanguageProvider>
+        <App />
+      </LanguageProvider>
+    </SentryErrorBoundary>
   </React.StrictMode>
 );
