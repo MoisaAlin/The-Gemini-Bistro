@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslations } from '../hooks/useTranslations';
 
 const galleryImages = [
   {
@@ -35,6 +36,8 @@ const galleryImages = [
 ];
 
 const PhotoGallery: React.FC = () => {
+  const { t } = useTranslations();
+
   const gridVariants = {
     hidden: {},
     visible: {
@@ -53,8 +56,8 @@ const PhotoGallery: React.FC = () => {
     <div className="bg-gray-900 py-16 sm:py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-extrabold text-white">A Glimpse Into Our World</h2>
-          <p className="text-gray-400 mt-2">Where every detail is a stroke of culinary art.</p>
+          <h2 className="text-4xl font-extrabold text-white">{t('gallery.title')}</h2>
+          <p className="text-gray-400 mt-2">{t('gallery.subtitle')}</p>
         </div>
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
