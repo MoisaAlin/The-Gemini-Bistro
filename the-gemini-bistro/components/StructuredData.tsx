@@ -1,6 +1,5 @@
-
-import React, { useEffect } from 'react';
-import { MENU_DATA } from '../constants';
+import React, { useEffect, useState } from 'react';
+import { fetchMenu } from '../services/apiService';
 import { Page } from '../App';
 import { MenuItem as MenuItemType } from '../types';
 
@@ -9,11 +8,17 @@ interface StructuredDataProps {
 }
 
 const StructuredData: React.FC<StructuredDataProps> = ({ currentPage }) => {
-  useEffect(() => {
-    // Define a unique ID for our script tag to manage it
-    const scriptId = 'restaurant-schema';
+  const [menuData, setMenuData] = useState<MenuItemType[]>([]);
 
-    // Remove any existing schema script to prevent duplicates
+  useEffect(() => {
+    // Fetch menu data for schema generation if we are on the menu page
+    if (currentPage === 'menu') {
+      fetchMenu().then(data => setMenuData(data));
+    }
+  }, [currentPage]);
+  
+  useEffect(() => {
+    const scriptId = 'restaurant-schema';
     const existingScript = document.getElementById(scriptId);
     if (existingScript) {
       existingScript.remove();
@@ -41,7 +46,7 @@ const StructuredData: React.FC<StructuredDataProps> = ({ currentPage }) => {
       image: 'https://picsum.photos/seed/interior/800/600',
     };
 
-    if (currentPage === 'menu') {
+    if (currentPage === 'menu' && menuData.length > 0) {
       const categories = ['Appetizers', 'Main Courses', 'Desserts', 'Beverages'];
       
       restaurantSchema.hasMenu = {
@@ -49,7 +54,7 @@ const StructuredData: React.FC<StructuredDataProps> = ({ currentPage }) => {
         hasMenuSection: categories.map(categoryName => ({
           '@type': 'MenuSection',
           name: categoryName,
-          hasMenuItem: MENU_DATA
+          hasMenuItem: menuData
             .filter(item => item.category === categoryName)
             .map((item: MenuItemType) => ({
               '@type': 'MenuItem',
@@ -57,7 +62,7 @@ const StructuredData: React.FC<StructuredDataProps> = ({ currentPage }) => {
               description: item.description,
               offers: {
                 '@type': 'Offer',
-                price: item.price.replace('$', ''), // Remove currency symbol for schema
+                price: item.price.replace('$', ''),
                 priceCurrency: 'USD',
               },
             })),
@@ -69,19 +74,17 @@ const StructuredData: React.FC<StructuredDataProps> = ({ currentPage }) => {
     script.id = scriptId;
     script.type = 'application/ld+json';
     script.innerHTML = JSON.stringify(restaurantSchema);
-
     document.head.appendChild(script);
 
-    // Cleanup function to remove the script when the component unmounts
     return () => {
       const scriptToRemove = document.getElementById(scriptId);
       if (scriptToRemove) {
         scriptToRemove.remove();
       }
     };
-  }, [currentPage]); // Re-run effect when currentPage changes
+  }, [currentPage, menuData]);
 
-  return null; // This component does not render anything to the DOM itself
+  return null;
 };
 
 export default StructuredData;
