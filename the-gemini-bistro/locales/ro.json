@@ -1,0 +1,73 @@
+{
+  "nav": {
+    "home": "Acasă",
+    "menu": "Meniu",
+    "reservations": "Rezervări"
+  },
+  "header": {
+    "title": "The Gemini Bistro"
+  },
+  "home": {
+    "title": "Experimentați Excelența Culinară",
+    "subtitle": "Descoperiți o simfonie de arome create cu pasiune și cele mai bune ingrediente. Bun venit la The Gemini Bistro.",
+    "viewMenuButton": "Vezi Meniul Nostru",
+    "makeReservationButton": "Fă o Rezervare"
+  },
+  "gallery": {
+    "title": "O Privire în Lumea Noastră",
+    "subtitle": "Unde fiecare detaliu este o tușă de artă culinară."
+  },
+  "testimonials": {
+    "title": "Ce Spun Oaspeții Noștri",
+    "subtitle": "Experiențele care ne definesc."
+  },
+  "menuPage": {
+    "title": "Meniul Nostru",
+    "subtitle": "Creat cu grijă, inspirat de tradiție.",
+    "noResults": "Niciun preparat nu corespunde filtrelor selectate.",
+    "noResultsSuggestion": "Încercați să eliminați un filtru pentru a vedea mai multe opțiuni.",
+    "loadingError": "Nu am putut încărca meniul. Vă rugăm să încercați din nou mai târziu.",
+    "filters": {
+      "vegan": "vegan",
+      "gluten-free": "fără gluten",
+      "spicy": "picant",
+      "chefs-recommendation": "recomandarea bucătarului"
+    }
+  },
+  "reservationsPage": {
+    "title": "Rezervă-ți Masa",
+    "subtitle": "Așteptăm cu nerăbdare să vă fim gazde.",
+    "form": {
+      "name": "Nume Complet",
+      "email": "Email",
+      "date": "Data",
+      "time": "Ora",
+      "guests": "Oaspeți",
+      "requests": "Cereri Speciale",
+      "submitButton": "Cere Rezervare",
+      "submittingButton": "Se trimite..."
+    },
+    "success": {
+      "title": "Mulțumim!",
+      "message": "Cererea dumneavoastră de rezervare a fost trimisă. Vă vom contacta în curând pentru a confirma.",
+      "newReservationButton": "Fă o Altă Rezervare"
+    }
+  },
+  "chatbot": {
+    "initialMessage": "Bună! Sunt gazda virtuală pentru The Gemini Bistro. Cu ce vă pot ajuta astăzi în legătură cu meniul nostru?",
+    "inputPlaceholder": "Întreabă despre meniu...",
+    "inputPlaceholderListening": "Ascult...",
+    "headerTitle": "Întreabă Bucătarul AI",
+    "openChat": "Deschide Chat",
+    "closeChat": "Închide chat",
+    "sendMessage": "Trimite Mesaj",
+    "enableVoice": "Activează vocea",
+    "disableVoice": "Dezactivează vocea",
+    "startListening": "Începe ascultarea",
+    "stopListening": "Oprește ascultarea",
+    "errorMessage": "Îmi pare rău, am probleme de conectare în acest moment."
+  },
+  "footer": {
+    "copyright": "© 2025 The Gemini Bistro. Toate drepturile rezervate."
+  }
+}
