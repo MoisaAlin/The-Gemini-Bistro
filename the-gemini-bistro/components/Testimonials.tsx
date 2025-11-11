@@ -1,7 +1,8 @@
-import React from 'react';
-import { TESTIMONIALS_DATA } from '../constants';
+import React, { useState, useEffect } from 'react';
+import { fetchTestimonials } from '../services/apiService';
 import type { Testimonial } from '../types';
 import { motion } from 'framer-motion';
+import { useTranslations } from '../hooks/useTranslations';
 
 const StarIcon: React.FC<{ filled: boolean }> = ({ filled }) => (
   <svg 
@@ -46,7 +47,45 @@ const TestimonialCard: React.FC<{ review: Testimonial }> = ({ review }) => (
   </motion.div>
 );
 
+const TestimonialCardSkeleton: React.FC = () => (
+    <div className="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col h-full animate-pulse">
+        <div className="flex-shrink-0">
+            <div className="h-5 w-28 bg-gray-700 rounded"></div>
+        </div>
+        <div className="mt-4 flex-grow space-y-2">
+            <div className="h-3 bg-gray-700 rounded w-full"></div>
+            <div className="h-3 bg-gray-700 rounded w-full"></div>
+            <div className="h-3 bg-gray-700 rounded w-4/5"></div>
+        </div>
+        <footer className="mt-4">
+            <div className="h-4 bg-gray-700 rounded w-1/3 mb-2"></div>
+            <div className="h-3 bg-gray-700 rounded w-1/4"></div>
+        </footer>
+    </div>
+);
+
+
 const Testimonials: React.FC = () => {
+  const { t } = useTranslations();
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const loadTestimonials = async () => {
+        try {
+            setIsLoading(true);
+            const data = await fetchTestimonials();
+            setTestimonials(data);
+        } catch (err) {
+            console.error("Failed to load testimonials", err);
+            // Silently fail for this component, don't show an error
+        } finally {
+            setIsLoading(false);
+        }
+    };
+    loadTestimonials();
+  }, []);
+
   const gridVariants = {
     hidden: {},
     visible: {
@@ -60,8 +99,8 @@ const Testimonials: React.FC = () => {
     <div className="bg-gray-900 border-t border-gray-800 py-16 sm:py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-extrabold text-white">What Our Guests Are Saying</h2>
-          <p className="text-gray-400 mt-2">The experiences that define us.</p>
+          <h2 className="text-4xl font-extrabold text-white">{t('testimonials.title')}</h2>
+          <p className="text-gray-400 mt-2">{t('testimonials.subtitle')}</p>
         </div>
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
@@ -70,9 +109,13 @@ const Testimonials: React.FC = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
-          {TESTIMONIALS_DATA.map((review, index) => (
-            <TestimonialCard key={index} review={review} />
-          ))}
+          {isLoading ? (
+            [...Array(3)].map((_, i) => <TestimonialCardSkeleton key={i} />)
+          ) : (
+            testimonials.map((review, index) => (
+              <TestimonialCard key={index} review={review} />
+            ))
+          )}
         </motion.div>
       </div>
     </div>
