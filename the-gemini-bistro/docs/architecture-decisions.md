@@ -67,11 +67,12 @@ This document outlines the key architectural decisions made for The Gemini Bistr
 
 ### **ADR-007: Backend and Data Handling**
 
-- **Decision:** No dedicated backend for the MVP. Menu data is stored in a client-side constant file.
+- **Decision:** Implement a **Simulated Backend Service** (`apiService.ts`) to manage all application data in-memory.
 - **Reasoning:**
-    - **MVP Focus:** The goal is to quickly build and deploy a functional frontend. A backend would add significant complexity and development time.
-    - **Simplicity:** Storing static data like the menu in `constants.ts` is simple and effective for the current requirements.
-    - **Future-Proofing:** The reservation form is built to be easily adaptable. The `handleSubmit` function can be modified in the future to send a request to a backend API without changing the UI.
+    - **Evolution from MVP:** The initial MVP used a static `constants.ts` file for simplicity. To support dynamic features like an Admin Panel and prepare for a real backend, a more robust solution was needed.
+    - **Decoupling Data:** The `apiService.ts` file acts as a data layer, completely decoupling the UI components from the data source. Components now fetch data asynchronously, making them more resilient and easier to test.
+    - **Realistic Development:** This approach mimics how the application will interact with a real backend API, including handling loading states, errors, and asynchronous operations. It enables features like CRUD (Create, Read, Update, Delete) for menu items and reservations within a single session.
+    - **Future-Proofing:** When a real backend is developed, only the `apiService.ts` file will need to be updated to make real network requests. No changes will be required in the UI components themselves.
 
 ---
 
