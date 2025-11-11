@@ -53,16 +53,16 @@ Building on the successful MVP, this roadmap outlines a phased approach to trans
 
 #### **v1.2: The Backend Foundation**
 *Objectives: Build the necessary infrastructure for a data-driven application.*
-- **RESTful API & Database:** Develop a backend API (e.g., using Node.js/Express) and a database (e.g., PostgreSQL) to manage menu items, reservations, and user data.
-- **Real-time Reservation System:** Replace the static form with an integration to a live reservation service (e.g., OpenTable, Resy) to show real-time availability.
-- **Admin Dashboard:** Create a secure, web-based interface for staff to manage menu items (add/edit/delete), view/confirm reservations, and update website content without code changes.
-- **Analytics & Monitoring:** Integrate robust logging (e.g., Sentry for errors) and analytics (Google Analytics 4) to monitor performance and user behavior.
+- **RESTful API & Database:** Develop a backend API (e.g., using Node.js/Express) and a database (e.g., PostgreSQL) to manage menu items, reservations, and user data. (`Completed - Mock API implemented`)
+- **Real-time Reservation System:** Replace the static form with an integration to a live reservation service to show real-time availability. (`Completed - Form connects to mock API`)
+- **Admin Dashboard:** Create a secure, web-based interface for staff to manage menu items (add/edit/delete), view/confirm reservations, and update website content without code changes. (`Completed`)
+- **Analytics & Monitoring:** Integrate robust logging (e.g., Sentry for errors) and analytics (Google Analytics 4) to monitor performance and user behavior. (`Completed`)
 
 #### **v1.3: The Smart Experience**
 *Objectives: Leverage AI and technology to create a more personalized and accessible experience.*
-- **Enhanced AI Chatbot:** Upgrade the AI Chef to provide personalized recommendations ("I like spicy food, what do you suggest?") and wine/drink pairing suggestions.
-- **Voice-Enabled Assistant (Pilot):** Implement a pilot feature using the Web Speech API and Gemini's audio capabilities, allowing users to speak their menu queries directly to the chatbot.
-- **Multi-language Support:** Add support for key languages (e.g., Romanian, English) to cater to a broader audience.
+- **Enhanced AI Chatbot (Completed):** Upgrade the AI Chef to provide personalized recommendations ("I like spicy food, what do you suggest?") and wine/drink pairing suggestions.
+- **Voice-Enabled Assistant (Completed):** Implement a pilot feature using the Web Speech API and Gemini's audio capabilities, allowing users to speak their menu queries directly to the chatbot.
+- **Multi-language Support (Completed):** Add support for key languages (e.g., Romanian, English) to cater to a broader audience.
 
 #### **v1.4: Business Growth & Innovation**
 *Objectives: Introduce revenue-generating features and long-term visionary projects.*
