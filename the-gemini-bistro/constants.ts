@@ -1,3 +1,4 @@
+<!--Fisier invechit, nu se mai foloseste-->
 import { MenuItem, Testimonial } from './types';
 
 export const MENU_DATA: MenuItem[] = [
