@@ -4,32 +4,38 @@ import { useTranslations } from '../hooks/useTranslations';
 
 const galleryImages = [
   {
-    src: 'https://picsum.photos/seed/dish1/800/600',
+    //'https://picsum.photos/seed/dish1/800/600'Original paceholder
+    src: 'https://images.unsplash.com/photo-1737210235283-7675f83efc59?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     alt: 'A beautifully plated gourmet dish',
     title: 'Art on a Plate',
   },
   {
-    src: 'https://picsum.photos/seed/interior/800/600',
+    //'https://picsum.photos/seed/interior/800/600'Original paceholder
+    src: 'https://images.unsplash.com/photo-1613946069412-38f7f1ff0b65?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     alt: 'The elegant and warm interior of The Gemini Bistro',
     title: 'Our Ambiance',
   },
   {
-    src: 'https://picsum.photos/seed/chef/800/600',
+    //'https://picsum.photos/seed/chef/800/600' Original paceholder
+    src: 'https://images.unsplash.com/photo-1581349485608-9469926a8e5e?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     alt: 'A chef meticulously crafting a dish in the kitchen',
     title: 'The Chef\'s Touch',
   },
   {
-    src: 'https://picsum.photos/seed/cocktail/800/600',
+    //'https://picsum.photos/seed/cocktail/800/600' Original paceholder
+    src: 'https://images.unsplash.com/photo-1695606393078-b11374bbe0ca?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     alt: 'A vibrant, handcrafted cocktail',
     title: 'Craft Cocktails',
   },
   {
-    src: 'https://picsum.photos/seed/guests/800/600',
+    //''https://picsum.photos/seed/guests/800/600''
+    src: 'https://images.unsplash.com/photo-1567231353937-e952e49e53c9?q=80&w=1346&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     alt: 'Happy guests dining and socializing',
     title: 'Unforgettable Moments',
   },
   {
-    src: 'https://picsum.photos/seed/dish2/800/600',
+    // 'https://picsum.photos/seed/dish2/800/600'
+    src: 'https://images.unsplash.com/photo-1608756687911-aa1599ab3bd9?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     alt: 'Another signature dish, bursting with color and flavor',
     title: 'Signature Flavors',
   },
