@@ -1,3 +1,4 @@
+/*
 <!--Fisier invechit, nu se mai foloseste-->
 import { MenuItem, Testimonial } from './types';
 
@@ -87,3 +88,4 @@ export const TESTIMONIALS_DATA: Testimonial[] = [
     rating: 5,
   }
 ];
+*/
