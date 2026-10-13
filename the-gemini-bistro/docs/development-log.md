@@ -91,3 +91,17 @@ This log tracks the development progress of The Gemini Bistro's website, alignin
     - Externalized all UI text into `en.json` and `ro.json` files.
     - Refactored all user-facing components to consume translations via a `useTranslations` hook.
     - Updated `geminiService` to be language-aware, instructing the AI to respond in the user's selected language.
+
+---
+
+### **v1.3.1 - Responsive Layout & Mobile/Tablet Overhaul**
+
+**Date:** 13.10.2026
+
+#### **Cross-Device Responsiveness**
+- **[DONE]** **Mobile Header Navigation:** Replaced the legacy `<select>` dropdown with a modern animated mobile hamburger drawer, accessible touch targets (min 44px), and integrated bilingual language switcher.
+- **[DONE]** **Adaptive Hero Section:** Tuned heading typography (`text-3xl sm:text-5xl md:text-6xl`), viewport heights (`min-h-[520px] h-[calc(100svh-4rem)]`), and full-width touch-friendly CTA buttons on mobile.
+- **[DONE]** **Touch-Friendly Menu & Filters:** Added horizontal smooth-scroll pill filters with "Reset" action, dietary badges on dish cards, and adaptive grid sizing (`grid-cols-1 md:grid-cols-2 lg:grid-cols-3`).
+- **[DONE]** **Chatbot Mobile Experience:** Upgraded the floating AI assistant to anchor smoothly on mobile viewports (`inset-x-2 bottom-2` on phones, floating sheet on desktop), 16px inputs to prevent mobile Safari auto-zoom, and 44px voice/send buttons.
+- **[DONE]** **Reservations & Admin Optimization:** Fixed dark mode native picker styling (`[color-scheme:dark]`), added mobile phone field, and introduced responsive card layouts for the admin panel on tablets and phones.
+- **[DONE]** **Viewport Stability:** Added `index.css` with horizontal overflow prevention and custom scrollbar utilities.
