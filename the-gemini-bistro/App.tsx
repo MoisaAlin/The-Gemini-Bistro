@@ -52,7 +52,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-900 text-gray-100 font-sans">
+    <div className="min-h-screen w-full overflow-x-hidden flex flex-col bg-gray-900 text-gray-100 font-sans">
       <StructuredData currentPage={currentPage} />
       <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
       <main className="flex-grow">
