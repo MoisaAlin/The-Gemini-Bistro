@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,6 +5,9 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Gemini Bistro</title>
+    <meta name="description" content="An elegant MVP for a restaurant website, featuring an AI-powered menu assistant to answer customer questions and enhance their dining experience." />
+    <meta property="og:title" content="The Gemini Bistro" />
+    <meta property="og:description" content="An elegant MVP for a restaurant website, featuring an AI-powered menu assistant to answer customer questions and enhance their dining experience." />
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       ::-webkit-scrollbar {
@@ -30,14 +32,14 @@
         "react-dom": "https://esm.sh/react-dom@19.0.0",
         "react-dom/": "https://esm.sh/react-dom@19.0.0/",
         "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
-        "framer-motion": "https://esm.sh/framer-motion@11.11.17?external=react,react-dom",
-        "@google/genai": "https://esm.sh/@google/genai@1.3.0"
+        "framer-motion": "https://esm.sh/framer-motion@11.11.17?external=react,react-dom"
       }
     }
     </script>
+    <link rel="stylesheet" href="/index.css">
   </head>
   <body class="bg-gray-900 text-white">
     <div id="root"></div>
-    <script type="module" src="index.tsx"></script>
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>
